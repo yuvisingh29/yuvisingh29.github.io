@@ -152,7 +152,7 @@
         });
         resizeCanvasForDPR();
 
-        /* ---- Purple color scheme ---- */
+        /* ---- Purple shades only ---- */
         function isMobile() {
             return window.innerWidth < 768;
         }
@@ -177,7 +177,7 @@
                     'rgba(180, 0, 255, OPACITY)',  // bright purple
                     'rgba(120, 0, 200, OPACITY)',  // medium purple
                     'rgba(90, 0, 150, OPACITY)',   // deep purple
-                    'rgba(220, 100, 255, OPACITY)' // light lavender purple
+                    'rgba(220, 100, 255, OPACITY)' // lavender
                 ];
                 this.colorTemplate = colors[Math.floor(Math.random() * colors.length)];
             }
@@ -201,8 +201,8 @@
         function initBlobs() {
             const mobile = isMobile();
             const count = mobile ? 8 : 16;
-            const sizeMin = mobile ? 18 : 35;
-            const sizeMax = mobile ? 32 : 65;
+            const sizeMin = mobile ? 35 : 60; // bigger min size
+            const sizeMax = mobile ? 65 : 110; // bigger max size
             const speedFactor = mobile ? 0.6 : 0.8;
 
             blobs = [];
@@ -238,6 +238,7 @@
         updateTime();
         setInterval(updateTime, 1000);
     </script>
+
 
 </body>
 

@@ -150,7 +150,7 @@
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = 60 + Math.random() * 60;
-                this.speedX = (Math.random() - 0.5) * 1.2;
+                this.speedX = (Math.random() - 0.5) * 1.2; // slower
                 this.speedY = (Math.random() - 0.5) * 1.2;
                 this.opacity = 0.18 + Math.random() * 0.15;
                 const colors = [
@@ -175,10 +175,8 @@
             draw() {
                 ctx.beginPath();
                 ctx.fillStyle = this.colorTemplate.replace('OPACITY', this.opacity);
-                ctx.filter = 'blur(15px)';
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
-                ctx.filter = 'none';
             }
         }
 
@@ -200,6 +198,7 @@
         }
         animate();
     </script>
+
 </body>
 
 </html>
